@@ -1,0 +1,50 @@
+:root {
+    --primary-pink: #ff69b4;
+    --secondary-gray: #4a4a4a;
+}
+
+body {
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+}
+
+.welcome-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-pink);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.illustration-container {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.desk-illustration {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .welcome-text {
+        font-size: 2rem;
+    }
+    
+    .illustration-container {
+        max-width: 200px;
+    }
+}
