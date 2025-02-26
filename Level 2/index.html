@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Hello World App</a>
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/"><i class="fas fa-home"></i> Home</a>
+                <a class="nav-link" href="/list"><i class="fas fa-list"></i> List</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Toast container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="messageToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="fas fa-info-circle me-2"></i>
+                <strong class="me-auto">Message</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello World!
+            </div>
+        </div>
+    </div>
+
+    <div class="container min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="text-center">
+            <div class="illustration-container mb-4">
+                <img src="{{ url_for('static', filename='images/desk_illustration.svg') }}" alt="Desk Illustration" class="desk-illustration">
+            </div>
+            <h1 class="welcome-text mb-4">Hello World!</h1>
+            <p class="lead text-muted">Welcome to your first web application</p>
+            <div class="mt-4">
+                <button class="btn btn-secondary me-2" onclick="showMessage()">
+                    <i class="fas fa-comment"></i> Show Message
+                </button>
+                <a href="/list" class="btn btn-primary">
+                    <i class="fas fa-list"></i> View List
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+</body>
+</html>
